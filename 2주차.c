@@ -10,25 +10,25 @@ int main() {
     int total_in = 0;         
 
 
-    printf("»óÇ° Á¾·ù °³¼ö ÀÔ·Â (1~100): ");
+    printf("ìƒí’ˆ ì¢…ë¥˜ ê°œìˆ˜ ì…ë ¥ (1~100): ");
     scanf("%d", &n);
 
    
     for (int i = 1; i <= n; i++) {
-        printf("»óÇ° ID %d ÀÔ°í ¼ö·®: ", i);
+        printf("ìƒí’ˆ ID %d ì…ê³  ìˆ˜ëŸ‰: ", i);
         scanf("%d", &stock[i]);
     }
 
     
     for (int i = 1; i <= n; i++) {
-        printf("»óÇ° ID %d ÆÇ¸Å ¼ö·®: ", i);
+        printf("ìƒí’ˆ ID %d íŒë§¤ ìˆ˜ëŸ‰: ", i);
         scanf("%d", &sales[i]);
         stock[i] -= sales[i];   
         if (stock[i] < 0) stock[i] = 0; 
     }
 
     
-    printf("Àç°í¼ö·®: ");
+    printf("ì¬ê³ ìˆ˜ëŸ‰: ");
     for (int i = 1; i <= n; i++) {
         printf("%d ", stock[i]);
         total_stock += stock[i];       
@@ -37,7 +37,7 @@ int main() {
     }
     printf("\n");
     double total_rate = ((double)total_sales / total_in) * 100.0;
-    printf("ÃÑ ÆÇ¸Å·®: %d (ÆÇ¸ÅÀ² %.2f%%)\n", total_sales, total_rate);
+    printf("ì´ íŒë§¤ëŸ‰: %d (íŒë§¤ìœ¨ %.2f%%)\n", total_sales, total_rate);
 
    
     int max_id = 1, min_id = 1;
@@ -45,13 +45,13 @@ int main() {
         if (sales[i] > sales[max_id]) max_id = i;
         if (sales[i] < sales[min_id]) min_id = i;
     }
-    printf("°¡Àå ¸¹ÀÌ ÆÇ¸ÅµÈ »óÇ° : ID %d, ÆÇ¸Å·® %d\n", max_id, sales[max_id]);
-    printf("°¡Àå Àû°Ô ÆÇ¸ÅµÈ »óÇ° : ID %d, ÆÇ¸Å·® %d\n", min_id, sales[min_id]);
+    printf("ê°€ì¥ ë§ì´ íŒë§¤ëœ ìƒí’ˆ : ID %d, íŒë§¤ëŸ‰ %d\n", max_id, sales[max_id]);
+    printf("ê°€ì¥ ì ê²Œ íŒë§¤ëœ ìƒí’ˆ : ID %d, íŒë§¤ëŸ‰ %d\n", min_id, sales[min_id]);
 
    
     for (int i = 1; i <= n; i++) {
         if (stock[i] <= 2) {
-            printf("»óÇ° ID %d : Àç°íºÎÁ·(%d)\n", i, stock[i]);
+            printf("ìƒí’ˆ ID %d : ì¬ê³ ë¶€ì¡±(%d)\n", i, stock[i]);
         }
     }
 
